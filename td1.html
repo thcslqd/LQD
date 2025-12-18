@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thi đua – Khen thưởng | Trường THCS Lê Quý Đôn</title>
+<style>
+:root {
+    --blue-main: #00A6FF;
+    --blue-dark: #0078D7;
+    --blue-light: #E5F6FF;
+    --red-main: #E53935;
+    --white: #ffffff;
+    --text-dark: #222;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--blue-light);
+    color: var(--text-dark);
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+header {
+    background: var(--blue-main);
+    color: white;
+    padding: 15px 0;
+}
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo h1 { margin: 0; font-size: 26px; }
+.logo p { margin: 0; font-size: 14px; }
+nav { background: var(--blue-dark); }
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover { background: var(--blue-main); }
+.breadcrumb {
+    background: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-left: 5px solid var(--blue-main);
+}
+.page-title {
+    background: white;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.page-title h2 {
+    margin-top: 0;
+    color: var(--blue-dark);
+}
+.meta {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.content {
+    background: white;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+.highlight {
+    background: var(--blue-light);
+    border-left: 4px solid var(--red-main);
+    padding: 12px;
+    margin: 15px 0;
+}
+.image-box {
+    margin: 15px 0;
+    text-align: center;
+}
+.image-box img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+footer {
+    margin-top: 30px;
+    background: var(--blue-dark);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+@media (max-width: 768px) {
+    .header-box { flex-direction: column; text-align: center; }
+    nav ul { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="container header-box">
+        <div class="logo">
+            <h1>TRƯỜNG THCS LÊ QUÝ ĐÔN</h1>
+            <p>Thôn 1 - Xã Trường Xuân - Lâm Đồng</p>
+        </div>
+    </div>
+	<button class="login-btn" onclick="openLogin()">Đăng nhập</button>
+</header>
+
+<nav>
+    <ul class="container">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thidua.html">Thi đua</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="breadcrumb">Trang chủ / Thi đua</div>
+    <div class="page-title">
+        <h2>GẶP MẶT ĐỘI TUYỂN HỌC SINH GIỎI CẤP HUYỆN NĂM HỌC 2024-2025</h2>
+        <div class="meta">📅 Ngày đăng: 17/01/2025 | ✍️ Ban Giám hiệu</div>
+    </div>
+    <div class="content">
+        <p>
+			Nhằm ghi nhận và biểu dương những thành tích tiêu biểu trong phong trào thi đua dạy tốt – học tốt,
+			Trường THCS Lê Quý Đôn đã tổ chức buổi gặp mặt các em học sinh đạt giải trong kỳ thi học sinh giỏi
+			cấp huyện năm học 2024 – 2025.
+		</p>
+		<p>
+			Sáng ngày 17/01/2025, Trường THCS Lê Quý Đôn đã tổ chức gặp mặt Đội tuyển học sinh giỏi của nhà
+			trường tham dự kỳ thi chọn học sinh giỏi lớp 9 và Olympic lớp 6, 7, 8 các môn văn hóa cấp huyện
+			năm học 2023 – 2024. Hoạt động được triển khai theo Kế hoạch số 65/KH-PGDĐT ngày 15/12/2023 của
+			Phòng Giáo dục và Đào tạo huyện Đắk Song.
+		</p>
+        <div class="highlight">
+            Buổi gặp mặt là dịp để nhà trường động viên, khích lệ tinh thần học tập, rèn luyện của các em học
+			sinh, đồng thời ghi nhận sự nỗ lực của đội ngũ giáo viên trong công tác bồi dưỡng học sinh giỏi.
+        </div>
+        <p>Tại buổi gặp mặt, Ban Giám hiệu nhà trường đã biểu dương và chúc mừng những kết quả mà các em học
+		sinh đạt được; mong muốn các em tiếp tục phát huy tinh thần hiếu học, ý chí vươn lên, góp phần lan tỏa
+		phong trào học tập tích cực trong toàn trường.</p>
+        <div class="image-box">
+            <img src="hsgh.jpg" alt="Gặp mặt học sinh giỏi cấp huyện">
+            <p><i>Hình ảnh buổi gặp mặt học sinh giỏi cấp huyện</i></p>
+        </div>
+        <p>Buổi gặp mặt diễn ra trong không khí trang trọng, ấm áp và đầy ý nghĩa, góp phần thúc đẩy phong trào
+		thi đua học tập của Trường THCS Lê Quý Đôn trong thời gian tới.</p>
+    </div>
+</div>
+<footer>
+    © 2025 – Website Trường THCS Lê Quý Đôn
+</footer>
+
+<div id="login-popup" class="popup">
+    <div class="popup-content">
+        <h2>Đăng nhập</h2>
+        <input type="text" placeholder="Tên đăng nhập">
+        <input type="password" placeholder="Mật khẩu">
+        <button class="btn">Đăng nhập</button>
+        <button class="close-btn" onclick="closeLogin()">Đóng</button>
+    </div>
+</div>
+
+<script>
+function openLogin() {
+    document.getElementById("login-popup").style.display = "block";
+    document.body.classList.add("popup-open");
+}
+
+function closeLogin() {
+    document.getElementById("login-popup").style.display = "none";
+    document.body.classList.remove("popup-open");
+}
+</script>
+
+</body>
+</html>

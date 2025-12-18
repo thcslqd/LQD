@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trường THCS Lê Quý Đôn - Lâm Đồng</title>
+
+<style>
+:root {
+    --blue-main: #00A6FF;
+    --blue-dark: #0078D7;
+    --blue-light: #E5F6FF;
+    --red-main: #E53935;
+    --white: #ffffff;
+    --text-dark: #222;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--blue-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    background: var(--blue-main);
+    color: white;
+    padding: 15px 0;
+}
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+}
+.logo p {
+    margin: 0;
+}
+
+.login-btn {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background: var(--red-main);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.login-btn:hover, .search-box button:hover {
+    opacity: 0.9;
+}
+
+.top-info {
+    background: white;
+    padding: 7px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--blue-dark);
+    flex-wrap: wrap;
+}
+.date-time {
+    margin-left: 20px;
+    font-weight: bold;
+}
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    color: var(--red-main);
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+nav {
+    background: var(--blue-dark);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+nav ul li {
+    position: relative;
+}
+nav ul li a {
+    padding: 15px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li:hover {
+    background: var(--blue-main);
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background: var(--blue-dark);
+    top: 48px;
+    min-width: 180px;
+    z-index: 100;
+}
+.submenu li a {
+    padding: 10px;
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.highlight-box {
+    background: var(--blue-light);
+    border-left: 5px solid var(--red-main);
+    padding: 12px;
+    margin-top: 15px;
+}
+.news-card {
+    background: white;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.news-card h3 {
+    color: var(--blue-dark);
+}
+.news-card a {
+    color: var(--red-main);
+    text-decoration: none;
+    font-weight: bold;
+}
+.news-card a:hover {
+    text-decoration: underline;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+}
+.popup-content {
+    width: 90%;
+    max-width: 350px;
+    background: white;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.popup-content input {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+}
+.btn, .close-btn {
+    padding: 10px 20px;
+    border: none;
+    background: var(--blue-dark);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.close-btn {
+    background: var(--red-main);
+}
+body.popup-open {
+    overflow: hidden;
+}
+
+footer {
+    margin-top: 30px;
+    background: var(--blue-dark);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .header-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    .submenu {
+        position: static;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-box">
+        <div class="logo">
+            <h1>TRƯỜNG THCS LÊ QUÝ ĐÔN</h1>
+            <p>Thôn 1 - Xã Trường Xuân - Lâm Đồng</p>
+        </div>
+
+        <div class="login">
+            <button class="login-btn" onclick="openLogin()">Đăng nhập</button>
+        </div>
+    </div>
+</header>
+
+<div class="top-info">
+    <div class="date-time" id="time"></div>
+    <div class="marquee">
+    <div class="marquee-text">
+        Chào mừng bạn đến với Website Trường THCS Lê Quý Đôn – Trường Xuân – Lâm Đồng!
+    </div>
+</div>
+
+</div>
+
+<nav>
+    <ul>
+        <li><a href="trangchinh.html">Trang chủ</a></li>
+        <li class="dropdown">
+            <a>Giới thiệu ⌄</a>
+            <ul class="submenu">
+                <li><a href="lshinhthanh.html">Lịch sử hình thành</a></li>
+                <li><a href="cctochuc.html">Cơ cấu tổ chức</a></li>
+                <li><a href="hinhanh.html">Hình ảnh</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a>Tin tức – Sự kiện ⌄</a>
+            <ul class="submenu">
+                <li><a href="tinnhatrg.html">Tin nhà trường</a></li>
+                <li><a href="hddoandoi.html">Hoạt động đoàn đội</a></li>
+                <li><a href="thongbao.html">Thông báo</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a>Hoạt động giáo dục ⌄</a>
+            <ul class="submenu">
+                <li><a href="chuyende.html">Chuyên đề</a></li>
+                <li><a href="thidua.html">Thi đua</a></li>
+            </ul>
+        </li>
+        <li><a href="lh.html">Liên hệ</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="highlight-box">
+        Tin nổi bật: Hoàn thành xây dựng cơ sở vật chất và Công trình Măng non...
+    </div>
+
+    <div class="news-card">
+        <h3>GẶP MẶT ĐỘI TUYỂN HỌC SINH GIỎI CẤP HUYỆN NĂM HỌC 2024-2025</h3>
+        <p>Nhằm ghi nhận và biểu dương những thành tích tiêu biểu trong phong trào
+		thi đua dạy tốt – học tốt, Trường THCS Lê Quý Đôn đã tổ chức buổi gặp mặt
+		các em học sinh đạt giải trong kỳ thi học sinh giỏi cấp huyện năm học 2024 – 2025.</p>
+        <a href="td1.html">Xem chi tiết</a>
+    </div>
+
+    <div class="news-card">
+        <h3>HÌNH ẢNH CƠ SỞ VẬT CHẤT</h3>
+        <p>Cơ sở vật chất đầy đủ, rộng rãi...</p>
+        <a href="hinhanh.html">Xem thêm</a>
+    </div>
+</div>
+
+<div id="login-popup" class="popup">
+    <div class="popup-content">
+        <h2>Đăng nhập</h2>
+        <input type="text" placeholder="Tên đăng nhập">
+        <input type="password" placeholder="Mật khẩu">
+        <button class="btn">Đăng nhập</button>
+        <button class="close-btn" onclick="closeLogin()">Đóng</button>
+    </div>
+</div>
+
+<footer>
+    © 2025 – Website trường THCS Lê Quý Đôn
+</footer>
+
+<script>
+function openLogin() {
+    document.getElementById("login-popup").style.display = "block";
+    document.body.classList.add("popup-open");
+}
+
+function closeLogin() {
+    document.getElementById("login-popup").style.display = "none";
+    document.body.classList.remove("popup-open");
+}
+</script>
+
+
+</body>
+</html>

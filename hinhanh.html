@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hình ảnh | THCS Lê Quý Đôn</title>
+
+<style>
+:root {
+    --blue-main: #00A6FF;
+    --blue-dark: #0078D7;
+    --blue-light: #E5F6FF;
+    --red-main: #E53935;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--blue-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    background: var(--blue-main);
+    color: white;
+    padding: 15px 0;
+}
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo h1 {
+    margin: 0;
+}
+
+nav {
+    background: var(--blue-dark);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    position: relative;
+}
+nav ul li a {
+    padding: 15px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li:hover {
+    background: var(--blue-main);
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background: var(--blue-dark);
+    top: 48px;
+    min-width: 180px;
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.page-title {
+    background: white;
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 6px solid var(--red-main);
+}
+.page-title h2 {
+    margin: 0;
+    color: var(--blue-dark);
+}
+
+/* Grid hình ảnh */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-card {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.image-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.image-card h3 {
+    margin: 10px;
+    color: var(--blue-dark);
+    font-size: 16px;
+}
+
+.image-card p {
+    margin: 0 10px 12px;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 30px;
+    background: var(--blue-dark);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .submenu {
+        position: static;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-box">
+        <div class="logo">
+            <h1>TRƯỜNG THCS LÊ QUÝ ĐÔN</h1>
+            <p>Thôn 1 - Xã Trường Xuân - Lâm Đồng</p>
+        </div>
+    </div>
+	<button class="login-btn" onclick="openLogin()">Đăng nhập</button>
+</header>
+
+
+<nav>
+<ul class="container">
+    <li><a href="index.html">Trang chủ</a></li>
+
+    <li class="dropdown">
+        <a href="#">Giới thiệu ⌄</a>
+        <ul class="submenu">
+            <li><a href="lshinhthanh.html">Lịch sử hình thành</a></li>
+            <li><a href="cctochuc.html">Cơ cấu tổ chức</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Tin tức – Sự kiện ⌄</a>
+        <ul class="submenu">
+            <li><a href="tinnhatrg.html">Tin nhà trường</a></li>
+            <li><a href="hddoandoi.html">Hoạt động đoàn đội</a></li>
+            <li><a href="thongbao.html">Thông báo</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Hoạt động giáo dục ⌄</a>
+        <ul class="submenu">
+            <li><a href="chuyende.html">Chuyên đề</a></li>
+            <li><a href="ngoaikhoa.html">Ngoại khoá</a></li>
+            <li><a href="thidua.html">Thi đua</a></li>
+        </ul>
+    </li>
+
+    <li><a href="lh.html">Liên hệ</a></li>
+</ul>
+</nav>
+
+<div class="container">
+    <div class="page-title">
+        <h2>CƠ SỞ VẬT CHẤT – HÌNH ẢNH</h2>
+    </div>
+
+    <div class="image-grid">
+        <div class="image-card">
+            <img src="phonghoc.jpg" alt="Phòng học">
+            <h3>Phòng học</h3>
+            <p>Phòng học khang trang, đầy đủ ánh sáng.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="ndn.jpg" alt="Phòng máy">
+            <h3>Nhà đa năng</h3>
+            <p>Rộng rãi, thoáng mái.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="santruong.jpg" alt="Sân trường">
+            <h3>Sân trường</h3>
+            <p>Rộng rãi, sạch đẹp cho hoạt động tập thể.</p>
+        </div>
+		
+        <div class="image-card">
+            <img src="congtruong.jpg" alt="Cổng trường">
+            <h3>Cổng trường</h3>
+            <p>Cổng trường khang trang, biển tên rõ ràng, tạo ấn tượng đầu tiên cho học sinh và phụ huynh.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+© 2025 – Website Trường THCS Lê Quý Đôn
+</footer>
+
+<div id="login-popup" class="popup">
+    <div class="popup-content">
+        <h2>Đăng nhập</h2>
+        <input type="text" placeholder="Tên đăng nhập">
+        <input type="password" placeholder="Mật khẩu">
+        <button class="btn">Đăng nhập</button>
+        <button class="close-btn" onclick="closeLogin()">Đóng</button>
+    </div>
+</div>
+
+<script>
+function openLogin() {
+    document.getElementById("login-popup").style.display = "block";
+    document.body.classList.add("popup-open");
+}
+
+function closeLogin() {
+    document.getElementById("login-popup").style.display = "none";
+    document.body.classList.remove("popup-open");
+}
+</script>
+
+</body>
+</html>
