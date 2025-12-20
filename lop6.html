@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hình ảnh hoạt động – Lớp 8</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #E5F6FF;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.page-title {
+    background: white;
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 6px solid #E53935;
+    color: #0078D7;
+    font-size: 22px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.back-btn {
+    display: inline-block;
+    margin: 25px 0;
+    background: #0078D7;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="page-title">HÌNH ẢNH HOẠT ĐỘNG – LỚP 6</div>
+
+    <div class="photo-grid" id="photoGrid"></div>
+
+    <a href="txa1.html" class="back-btn">← Quay lại</a>
+</div>
+
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+const start = 60;
+const end = 63;
+const folder = "";
+
+const grid = document.getElementById("photoGrid");
+let images = [];
+
+for (let i = start; i <= end; i++) {
+    images.push(folder + i + ".jpg");
+}
+
+for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+}
+
+images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.onclick = () => openImage(src);
+    grid.appendChild(img);
+});
+
+function openImage(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
